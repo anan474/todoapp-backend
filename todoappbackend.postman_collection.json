@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "d6d1474b-482c-4a8f-96f9-d465b518077e",
+		"name": "todoappbackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "todos",
+			"item": [
+				{
+					"name": "/todos/semua",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/todos/semua",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"todos",
+								"semua"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/todos?filter=true&fields=done&sort=createAt&order=1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "true"
+								},
+								{
+									"key": "fields",
+									"value": "done"
+								},
+								{
+									"key": "sort",
+									"value": "createAt"
+								},
+								{
+									"key": "order",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/todos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "todo",
+									"value": "Buat todo baru lagi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/todos",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/todos/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/todos/5bd08db979bbc504c14ebfdd",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"todos",
+								"5bd08db979bbc504c14ebfdd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/todos/:id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "todo",
+									"value": "Ups saya update ya",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/todos/5bd08db979bbc504c14ebfdd",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"todos",
+								"5bd08db979bbc504c14ebfdd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/todos/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server}}/todos/5b38171b1843d58427c5d6c4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"todos",
+								"5b38171b1843d58427c5d6c4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
